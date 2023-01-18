@@ -61,6 +61,8 @@ docker run -p 4000:4000 -d <your username>/backend
 
 Now you can use [http://localhost:4000](http://localhost:4000) as api base url.
 
+## **Deployed on Render** : **[https://reunion-xx77.onrender.com/](https://reunion-xx77.onrender.com/)**
+
 # Problem Statement
 
 - Build APIs for a social media platform in either NodeJS or Python
