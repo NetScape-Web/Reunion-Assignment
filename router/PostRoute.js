@@ -73,7 +73,7 @@ router.delete("/:id", async (req, res) => {
   const { user } = req;
   const { id: postId } = req.params;
   const post = await Post.findById(postId);
-  if (user.id.toString() === post.createdBy.toString()) {
+  if (post && user.id.toString() === post.createdBy.toString()) {
     try {
       await Post.findByIdAndDelete(post._id);
       return res.status(200).json({

@@ -1,5 +1,66 @@
 # Back End Assignment - REUNION
 
+## **How to run on local Machine**
+
+### Step 1 : Clone Repository
+
+```bash
+git clone https://github.com/NetScape-Web/Reunion-Assignment.git
+```
+
+### Step 2 : install Dependencies
+
+- For npm users
+
+```bash
+npm install
+```
+
+- For yarn users
+
+```bash
+yarn install
+```
+
+### Step 3 : setup envoirnment veriables
+
+- Create a `.env` file in root directory and paste all these veriables. Take reference from .env.sample file available in root directory.
+
+```js
+PORT=4000
+MONGODB_URL=<MONGODB_URL>
+JWT_EXPIRE=2d
+JWT_SECRET=w%k#]G!Xm_a}#(qO+dkSm|>3olfam52-
+```
+
+### Step 4 : Start server
+
+```bash
+npm start
+```
+
+or
+
+```bash
+yarn start
+```
+
+## **Docker Image**
+
+### Step 1 : Build Image
+
+```bash
+docker build . -t <your username>/backend
+```
+
+### Step 2 : Run Docker Image
+
+```bash
+docker run -p 4000:4000 -d <your username>/backend
+```
+
+Now you can use [http://localhost:4000](http://localhost:4000) as api base url.
+
 # Problem Statement
 
 - Build APIs for a social media platform in either NodeJS or Python
@@ -12,10 +73,8 @@
 
   - INPUT: Email, Password
   - RETURN: JWT token
-    <aside>
-    ➡️ **NOTE:** Use dummy email & password for authentication. No need to create endpoint for registering new user.
 
-    </aside>
+    **NOTE:** Use dummy email & password for authentication. No need to create endpoint for registering new user.
 
 - POST /api/follow/{id} authenticated user would follow user with {id}
 - POST /api/unfollow/{id} authenticated user would unfollow a user with {id}
