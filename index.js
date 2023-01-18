@@ -27,7 +27,6 @@ app.use(morgan("common"));
 
 // Routes
 app.use("/api/authenticate", authRouter);
-app.use("/api/post", validate, postRouter);
 app.use("/api/follow", validate, followRouter);
 app.use("/api/unfollow", validate, unfollowRouter);
 app.use("/api/user", validate, userRouter);
@@ -40,3 +39,5 @@ app.use("/api/all_posts", validate, allPostsRouter);
 app.listen(process.env.PORT, () =>
   console.log(`Developement Server is running on port ${process.env.PORT}...`)
 );
+
+export default app;

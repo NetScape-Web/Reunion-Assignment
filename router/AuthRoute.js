@@ -1,4 +1,4 @@
-import { compare, genSalt, hash } from "bcrypt";
+import { compare } from "bcrypt";
 import { Router } from "express";
 import User from "../models/UserModel.js";
 
