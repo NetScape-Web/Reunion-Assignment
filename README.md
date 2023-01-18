@@ -63,6 +63,8 @@ Now you can use [http://localhost:4000](http://localhost:4000) as api base url.
 
 ## **Deployed on Render** : **[https://reunion-xx77.onrender.com/](https://reunion-xx77.onrender.com/)**
 
+**To Test this api, i have provided REUNION.postman_collection.json file in root directory, import it in postman and you can test api.**
+
 # Problem Statement
 
 - Build APIs for a social media platform in either NodeJS or Python
