@@ -5,6 +5,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import {
   authRouter,
+  commentRouter,
   followRouter,
   likePostRouter,
   postRouter,
@@ -32,6 +33,7 @@ app.use("/api/user", validate, userRouter);
 app.use("/api/posts", validate, postRouter);
 app.use("/api/like", validate, likePostRouter);
 app.use("/api/unlike", validate, unlikePostRouter);
+app.use("/api/comment", validate, commentRouter);
 
 app.listen(process.env.PORT, () =>
   console.log(`Developement Server is running on port ${process.env.PORT}...`)

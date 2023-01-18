@@ -8,13 +8,14 @@ router.put("/:id", async (req, res) => {
   const { user } = req;
 
   try {
-    await Post.updateOne(
+    await Post.findByIdAndUpdate(
       { _id: postId },
       {
         $addToSet: {
           likes: user.id,
         },
-      }
+      },
+      { new: true }
     );
     res.status(200).json({
       error: false,

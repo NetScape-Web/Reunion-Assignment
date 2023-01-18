@@ -39,22 +39,24 @@ router.put("/:id", async (req, res) => {
     });
   }
   // update follower in followId  profile (followId)
-  await User.updateOne(
+  await User.findByIdAndUpdate(
     { _id: followingProfile._id },
     {
       $addToSet: {
         followers: followerProfile._id,
       },
-    }
+    },
+    { new: true }
   );
   // update following in current profile (id)
-  await User.updateOne(
+  await User.findByIdAndUpdate(
     { _id: followerProfile._id },
     {
       $addToSet: {
         following: followingProfile._id,
       },
-    }
+    },
+    { new: true }
   );
   const { following } = await User.findOne({ _id: followerProfile._id });
 
