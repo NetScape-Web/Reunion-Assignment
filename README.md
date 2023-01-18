@@ -45,6 +45,18 @@ or
 yarn start
 ```
 
+### Step 5 : Run All Testcases
+
+```bash
+npm run test
+```
+
+or
+
+```bash
+yarn test
+```
+
 ## **Docker Image**
 
 ### Step 1 : Build Image
@@ -115,12 +127,10 @@ Now you can use [http://localhost:4000](http://localhost:4000) as api base url.
 - **Provide the list of the functional testcases** specific to each API endpoint with description in an Excel sheet ([**sample sheet**](https://www.notion.so/Back-End-Assignment-REUNION-bd5e48b7aab54e91b6ee8829c3e30c4a)) & submit it via the form below.
 
   - Don’t write all the testcase but try to focus on the important testcases according to your understanding.
-    <aside>
-    💬 **Sample excel file for tests**
+
+    💬**Sample excel file for tests**
 
     [Sample Test Case](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/04d601bc-47d5-45f9-bcd5-eba09e7b6acc/Untitled.xlsx)
-
-    </aside>
 
 - **Implement the testcases** using the language specific framework or library like Mocha or Chai.js for Node.
   - Commit the testcase code in the git repo & provide the commands to run the testcases.
