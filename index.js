@@ -22,11 +22,12 @@ app.use(helmet());
 app.use(morgan("common"));
 
 // Routes
-app.use("/api/auth", authRouter);
-app.use("/api/auth", validate, postRouter);
+app.use("/api/authenticate", authRouter);
+app.use("/api/post", validate, postRouter);
 app.use("/api/follow", validate, followRouter);
 app.use("/api/unfollow", validate, unfollowRouter);
 app.use("/api/user", validate, userRouter);
+app.use("/api/posts", validate, postRouter);
 
 app.listen(process.env.PORT, () =>
   console.log(`Developement Server is running on port ${process.env.PORT}...`)
