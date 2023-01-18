@@ -1,13 +1,11 @@
-import { genSalt, hash } from "bcrypt";
 import { Router } from "express";
-import validate from "../middleware/AuthMiddleware.js";
 import User from "../models/UserModel.js";
 
 const router = Router();
 
 // follow people
 
-router.put("/:id", validate, async (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id: followId } = req.params;
   const { user } = req;
   const followerProfile = await User.findOne({ _id: user.id });
@@ -44,7 +42,7 @@ router.put("/:id", validate, async (req, res) => {
   await User.updateOne(
     { _id: followingProfile._id },
     {
-      $push: {
+      $addToSet: {
         followers: followerProfile._id,
       },
     }
@@ -53,7 +51,7 @@ router.put("/:id", validate, async (req, res) => {
   await User.updateOne(
     { _id: followerProfile._id },
     {
-      $push: {
+      $addToSet: {
         following: followingProfile._id,
       },
     }

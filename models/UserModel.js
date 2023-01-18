@@ -4,6 +4,10 @@ import jwt from "jsonwebtoken";
 
 const UserSchema = new Schema(
   {
+    username: {
+      type: String,
+      required: [true, "Provide a username"],
+    },
     email: {
       type: String,
       trim: true,
@@ -12,12 +16,12 @@ const UserSchema = new Schema(
       required: "Email address is required",
       match: [
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        "Please fill a valid email address",
+        "Enter a valid email address",
       ],
     },
     password: {
       type: String,
-      required: [true, "Please Provide Password"],
+      required: [true, "Provide Password"],
       minlength: 8,
       select: false,
     },

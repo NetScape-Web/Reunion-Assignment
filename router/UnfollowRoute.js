@@ -1,10 +1,9 @@
 import { Router } from "express";
-import validate from "../middleware/AuthMiddleware.js";
 import User from "../models/UserModel.js";
 
 const router = Router();
 
-router.put("/:id", validate, async (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { user } = req;
   const followerProfile = await User.findOne({ _id: user.id });
@@ -53,7 +52,7 @@ router.put("/:id", validate, async (req, res) => {
 
   return res.status(200).json({
     error: false,
-    message: "following",
+    message: "unfollow user.",
     payload: {
       following,
     },
