@@ -14,7 +14,7 @@ router.post("/login", async (req, res, next) => {
       message: "Email or Password can not be empty!",
     });
   }
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email }).select("+password");
   if (!user) {
     return res.status(404).json({
       error: true,

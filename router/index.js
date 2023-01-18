@@ -1,4 +1,6 @@
 import authRouter from "./AuthRoute.js";
-import userRouter from "./UserRoute.js";
+import followRouter from "./FollowRoute.js";
+import postRouter from "./PostRoute.js";
+import unfollowRouter from "./UnfollowRoute.js";
 
-export { authRouter, userRouter };
+export { authRouter, followRouter, postRouter, unfollowRouter };

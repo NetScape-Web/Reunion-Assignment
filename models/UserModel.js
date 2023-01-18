@@ -17,8 +17,19 @@ const UserSchema = new Schema(
     },
     password: {
       type: String,
-      required: true,
-      min: 8,
+      required: [true, "Please Provide Password"],
+      minlength: 8,
+      select: false,
+    },
+    followers: {
+      type: [Schema.Types.ObjectId],
+      ref: "User",
+      default: [],
+    },
+    following: {
+      type: [Schema.Types.ObjectId],
+      ref: "User",
+      default: [],
     },
   },
   { timestamps: true }
