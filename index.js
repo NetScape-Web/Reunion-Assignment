@@ -6,8 +6,10 @@ import morgan from "morgan";
 import {
   authRouter,
   followRouter,
+  likePostRouter,
   postRouter,
   unfollowRouter,
+  unlikePostRouter,
   userRouter,
 } from "./router/index.js";
 import { ConnectDB } from "./config/Database.js";
@@ -28,6 +30,8 @@ app.use("/api/follow", validate, followRouter);
 app.use("/api/unfollow", validate, unfollowRouter);
 app.use("/api/user", validate, userRouter);
 app.use("/api/posts", validate, postRouter);
+app.use("/api/like", validate, likePostRouter);
+app.use("/api/unlike", validate, unlikePostRouter);
 
 app.listen(process.env.PORT, () =>
   console.log(`Developement Server is running on port ${process.env.PORT}...`)
