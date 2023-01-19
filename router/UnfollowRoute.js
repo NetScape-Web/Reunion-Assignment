@@ -7,9 +7,12 @@ router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { user } = req;
   const followerProfile = await User.findOne({ _id: user.id });
-  const followingProfile = await User.findOne({ _id: id });
-  if (!followingProfile) {
-    return req.status(400).json({
+  let followingProfile;
+
+  try {
+    followingProfile = await User.findOne({ _id: id });
+  } catch (error) {
+    return res.status(400).json({
       error: true,
       message: "The profile you requested to unfollow is not available.",
     });

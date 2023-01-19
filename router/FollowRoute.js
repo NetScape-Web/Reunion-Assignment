@@ -15,9 +15,11 @@ router.put("/:id", async (req, res) => {
       message: "You can not follow yourself.",
     });
   }
-  const followingProfile = await User.findOne({ _id: followId });
-  if (!followingProfile) {
-    return req.status(400).json({
+  let followingProfile;
+  try {
+    followingProfile = await User.findOne({ _id: followId });
+  } catch (error) {
+    return res.status(400).json({
       error: true,
       message: "The profile you requested to follow is not available.",
     });

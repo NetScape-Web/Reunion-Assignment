@@ -79,3 +79,68 @@ describe("User Api", () => {
       });
   });
 });
+
+// follow route
+describe("follow and unfollow Api", () => {
+  // Get Profile Details of current user.
+  it("Follow 63c73ae9e13f95272f0b26ec by currently logged in user.", (done) => {
+    chai
+      .request(app)
+      .put("/api/follow/63c73ae9e13f95272f0b26ec")
+      .set({ authorization: collector.authorization })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        res.body.should.have.property("error").eq(false);
+        res.body.should.have.property("message").eq("following");
+        res.body.should.have.property("payload").should.be.a("object");
+        done();
+      });
+  });
+  it("Unollow 63c73ae9e13f95272f0b26ec by currently logged in user.", (done) => {
+    chai
+      .request(app)
+      .put("/api/unfollow/63c73ae9e13f95272f0b26ec")
+      .set({ authorization: collector.authorization })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        res.body.should.have.property("error").eq(false);
+        res.body.should.have.property("message").eq("unfollow user.");
+        res.body.should.have.property("payload").should.be.a("object");
+        done();
+      });
+  });
+  it("Try to Follow user does not exist 63c73ae9e13f95272f0b26ec1 by currently logged in user.", (done) => {
+    chai
+      .request(app)
+      .put("/api/follow/63c73ae9e13f95272f0b26ec1")
+      .set({ authorization: collector.authorization })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a("object");
+        res.body.should.have.property("error").eq(true);
+        res.body.should.have
+          .property("message")
+          .eq("The profile you requested to follow is not available.");
+        res.body.should.not.have.property("payload");
+        done();
+      });
+  });
+  it("Try to Unollow user does not exist Unollow 63c73ae9e13f95272f0b26ec1 by currently logged in user.", (done) => {
+    chai
+      .request(app)
+      .put("/api/unfollow/63c73ae9e13f95272f0b26ec1")
+      .set({ authorization: collector.authorization })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.be.a("object");
+        res.body.should.have.property("error").eq(true);
+        res.body.should.have
+          .property("message")
+          .eq("The profile you requested to unfollow is not available.");
+        res.body.should.not.have.property("payload");
+        done();
+      });
+  });
+});
