@@ -6,10 +6,10 @@ chai.should();
 chai.use(chaihttp);
 
 const collector = {
-  authentication: "",
+  authorization: "",
 };
 
-describe("Authentication Api", () => {
+describe("Authorization Api", () => {
   //Test Get
   describe("Login User", () => {
     it("It should return access token", (done) => {
@@ -25,7 +25,7 @@ describe("Authentication Api", () => {
           response.body.should.be.a("object");
           response.body.should.have.property("error");
           response.body.should.have.property("payload");
-          collector.authentication = `Bearer ${response.body.payload.token}`;
+          collector.authorization = `Bearer ${response.body.payload.token}`;
           done();
         });
     });
@@ -48,5 +48,34 @@ describe("Authentication Api", () => {
           done();
         });
     });
+  });
+});
+
+describe("User Api", () => {
+  // Get Profile Details of current user.
+  it("Get Profile Details of current user", (done) => {
+    chai
+      .request(app)
+      .get("/api/user")
+      .set({ authorization: collector.authorization })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        res.body.should.have.property("error").eq(false);
+        res.body.should.have.property("message").eq("User Exist.");
+        res.body.should.have.property("payload");
+        done();
+      });
+  });
+  it("Get Profile Details for manupulated authorization token of user", (done) => {
+    chai
+      .request(app)
+      .get("/api/user")
+      .set({ authorization: collector.authorization + "error" })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.text.should.be.eq("Invalid Token");
+        done();
+      });
   });
 });
