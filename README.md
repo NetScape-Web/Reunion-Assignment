@@ -77,6 +77,48 @@ Now you can use [http://localhost:4000](http://localhost:4000) as api base url.
 
 **To Test this api, i have provided REUNION.postman_collection.json file in root directory, import it in postman and you can test api.**
 
+***Example***
+
+```bash
+┌──(exploit㉿exploit)-[~/Documents/Projects/Reunion-Assignment]
+└─$ npm run test
+
+> reunion-assignment@1.0.0 test
+> mocha 'tests/**/*.js' --recursive  --timeout 60000 --exit
+
+Developement Server is running on port 4000...
+
+
+  Authorization Api
+    Login User
+Database connected.
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:29 +0000] "POST /api/authenticate HTTP/1.1" 200 374
+      ✔ It should return access token (1028ms)
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:29 +0000] "POST /api/authenticate HTTP/1.1" 404 47
+      ✔ It should not return access token (99ms)
+
+  User Api
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:29 +0000] "GET /api/user HTTP/1.1" 200 79
+    ✔ Get Profile Details of current user (62ms)
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:30 +0000] "GET /api/user HTTP/1.1" 401 13
+    ✔ Get Profile Details for manupulated authorization token of user
+
+  follow and unfollow Api
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:30 +0000] "PUT /api/follow/63c73ae9e13f95272f0b26ec HTTP/1.1" 200 90
+    ✔ Follow 63c73ae9e13f95272f0b26ec by currently logged in user. (223ms)
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:30 +0000] "PUT /api/unfollow/63c73ae9e13f95272f0b26ec HTTP/1.1" 200 69
+    ✔ Unollow 63c73ae9e13f95272f0b26ec by currently logged in user. (166ms)
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:30 +0000] "PUT /api/follow/63c73ae9e13f95272f0b26ec1 HTTP/1.1" 400 80
+    ✔ Try to Follow user does not exist 63c73ae9e13f95272f0b26ec1 by currently logged in user. (40ms)
+::ffff:127.0.0.1 - - [19/Jan/2023:09:54:30 +0000] "PUT /api/unfollow/63c73ae9e13f95272f0b26ec1 HTTP/1.1" 400 82
+    ✔ Try to Unollow user does not exist Unollow 63c73ae9e13f95272f0b26ec1 by currently logged in user. (45ms)
+
+
+  8 passing (2s)
+
+  ```
+
+
 # Problem Statement
 
 - Build APIs for a social media platform in either NodeJS or Python
