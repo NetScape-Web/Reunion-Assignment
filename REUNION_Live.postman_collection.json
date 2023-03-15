@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "1f3b529a-0d80-4808-8f1d-928030c53466",
-		"name": "REUNION",
+		"_postman_id": "c1e17f43-b11c-44fe-9bf9-1b51eb617782",
+		"name": "REUNION_Live",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25387018"
 	},
@@ -24,12 +24,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/authenticate",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/authenticate",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"authenticate"
@@ -45,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"Sonu Kumar\",\n    \"email\": \"sonu1@reunion.com\",\n    \"password\": \"reunion@123\"\n}",
+							"raw": "{\n    \"username\": \"Sonu Kumar\",\n    \"email\": \"sonu@reunion.com\",\n    \"password\": \"reunion@123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -53,12 +54,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/authenticate/register",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/authenticate/register",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"authenticate",
@@ -88,16 +90,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/follow/63c73ae9e13f95272f0b26ec1",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/follow/63c73b18e13f95272f0b26ef",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"follow",
-								"63c73ae9e13f95272f0b26ec1"
+								"63c73b18e13f95272f0b26ef"
 							]
 						}
 					},
@@ -118,16 +121,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/unfollow/63c73ae9e13f95272f0b26ec1",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/unfollow/63c73b18e13f95272f0b26ef",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"unfollow",
-								"63c73ae9e13f95272f0b26ec1"
+								"63c73b18e13f95272f0b26ef"
 							]
 						}
 					},
@@ -151,12 +155,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/user",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/user",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"user"
@@ -171,7 +176,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzczYjE4ZTEzZjk1MjcyZjBiMjZlZiIsImVtYWlsIjoic29udUByZXVuaW9uLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJG5JZm5TN3dmc3BwNC5xbE13WjMucnVsdlNZODZZMkZ6ZHIzLnhyQ2w1TkxncjhKZnpRRGRpIiwiaWF0IjoxNjc4ODkzMzE0LCJleHAiOjE2Nzk3NTczMTR9.bu1mhxj4ufbOeTKkuKNzGJIEZS0po4W4kHwIhtm7Rks",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzczYjE4ZTEzZjk1MjcyZjBiMjZlZiIsImVtYWlsIjoic29udUByZXVuaW9uLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJG5JZm5TN3dmc3BwNC5xbE13WjMucnVsdlNZODZZMkZ6ZHIzLnhyQ2w1TkxncjhKZnpRRGRpIiwiaWF0IjoxNjc4ODkyNjQxLCJleHAiOjE2Nzk5Mjk0NDF9.sxYmTWDa9qu1YUJ-MqS9B20tk0ui1GGhRVMf40yNUqM",
 						"type": "string"
 					}
 				]
@@ -215,12 +220,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/posts",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/posts",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"posts"
@@ -235,12 +241,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/posts/63c83c6eda5ca34d435388e8",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/posts/63c83c6eda5ca34d435388e8",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"posts",
@@ -256,12 +263,13 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/like/63c7d2d27c32c3cabedf546a",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/like/63c7d2d27c32c3cabedf546a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"like",
@@ -277,12 +285,13 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/unlike/63c7d2d27c32c3cabedf546a",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/unlike/63c7d2d27c32c3cabedf546a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"unlike",
@@ -307,12 +316,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/comment/63c7d2d27c32c3cabedf546a",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/comment/63c7d2d27c32c3cabedf546a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"comment",
@@ -328,12 +338,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/posts/63c7d2d27c32c3cabedf546a",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/posts/63c7d2d27c32c3cabedf546a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"posts",
@@ -349,12 +360,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/api/all_posts",
-							"protocol": "http",
+							"raw": "https://reunion-xx77.onrender.com/api/all_posts",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"reunion-xx77",
+								"onrender",
+								"com"
 							],
-							"port": "4000",
 							"path": [
 								"api",
 								"all_posts"
@@ -369,7 +381,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzczYjE4ZTEzZjk1MjcyZjBiMjZlZiIsImVtYWlsIjoic29udUByZXVuaW9uLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJG5JZm5TN3dmc3BwNC5xbE13WjMucnVsdlNZODZZMkZ6ZHIzLnhyQ2w1TkxncjhKZnpRRGRpIiwiaWF0IjoxNjc4ODkzMzE0LCJleHAiOjE2Nzk3NTczMTR9.bu1mhxj4ufbOeTKkuKNzGJIEZS0po4W4kHwIhtm7Rks",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzczYjE4ZTEzZjk1MjcyZjBiMjZlZiIsImVtYWlsIjoic29udUByZXVuaW9uLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJG5JZm5TN3dmc3BwNC5xbE13WjMucnVsdlNZODZZMkZ6ZHIzLnhyQ2w1TkxncjhKZnpRRGRpIiwiaWF0IjoxNjc4ODkyNjQxLCJleHAiOjE2Nzk5Mjk0NDF9.sxYmTWDa9qu1YUJ-MqS9B20tk0ui1GGhRVMf40yNUqM",
 						"type": "string"
 					}
 				]
