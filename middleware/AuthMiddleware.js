@@ -1,5 +1,5 @@
-import { verify } from "jsonwebtoken";
-
+import * as jwt from "jsonwebtoken";
+const { verify } = jwt;
 const validate = (req, res, next) => {
   const Btoken = req.headers["authorization"];
   const token = Btoken.split(" ")[1];
