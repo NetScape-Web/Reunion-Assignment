@@ -22,7 +22,9 @@ dotenv.config();
 ConnectDB();
 
 app.use(express.json());
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.use(morgan("common"));
 
 // Routes
